@@ -52,7 +52,7 @@ class XavierTestCase(TestCase):
 
     def test_oauth2_invalid_state(self):
         session = {"next": "http://nowhere.ca/", "state": "some-state"}
-        with mock.patch("ukti.datahub.auth.flask.session", new=session):
+        with mock.patch("ukti.datahub.xavier.flask.session", new=session):
             r = self.auth.get("/oauth2?code=some-string&state=invalid")
             self.assertEqual(r.status_code, 403)
 
@@ -60,7 +60,7 @@ class XavierTestCase(TestCase):
 
         session = {"next": "http://nowhere.ca/", "state": "some-state"}
 
-        with mock.patch("ukti.datahub.auth.flask.session", new=session):
+        with mock.patch("ukti.datahub.xavier.flask.session", new=session):
 
             r = self.auth.get("/oauth2?code=some-string&state=some-state")
 
