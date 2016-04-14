@@ -1,4 +1,4 @@
-# Xavier
+# Xavier (auth server)
 
 The auth server component of the multi-part authentication system for Cerebro.
 It handles bouncing the user to and from Microsoft services before returning
